@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-
-// Simplified React version with plain HTML elements and Tailwind.
+import Image from "next/image";
 
 const Icon = {
   Mail: (props: React.SVGProps<SVGSVGElement>) => (
@@ -20,15 +19,36 @@ const Icon = {
       <path d="m20 6-11 11-5-5"/>
     </svg>
   ),
+  X: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+    </svg>
+  ),
+  Instagram: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+    </svg>
+  ),
 };
 
-export default function AirleteLandingPlain() {
+export default function AirleteLanding() {
   useEffect(() => {
-    const anchors = ["#product", "#tech", "#story", "#faq", "#waitlist"];
-    const results = anchors.map((sel) => [sel, !!document.querySelector(sel)]);
-    console.group("[Airlete] Smoke tests");
-    results.forEach(([sel, ok]) => console.log(`${sel} present:`, ok));
-    console.groupEnd();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-in-up");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll(".fade-in-section").forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -39,106 +59,386 @@ export default function AirleteLandingPlain() {
       alert("Please enter an email.");
       return;
     }
-    alert("Thanks! You’re on the list.");
+    alert("Thanks! You're on the pre-order list. Check your inbox for confirmation.");
     e.currentTarget.reset();
   }
 
   return (
-    <main className="min-h-screen bg-white text-slate-900">
-      {/* Nav */}
-      <nav className="sticky top-0 z-50 border-b bg-white/70 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-          <div className="flex items-center gap-3">
-            <span className="text-xl font-semibold tracking-tight">Airlete</span>
+    <main className="min-h-screen bg-[#F5F1EC] text-[#2C2824]">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-[#F5F1EC]/95 backdrop-blur-md border-b border-[#D4C5B0]/30">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <div className="flex items-center gap-2">
+            <div className="relative w-10 h-10">
+              <div className="absolute inset-0 rounded-full border-2 border-[#2C2824] flex items-center justify-center">
+                <span className="text-xs font-light tracking-[0.2em]">AL</span>
+              </div>
+            </div>
+            <span className="text-2xl font-light tracking-[0.15em]">AirLete</span>
           </div>
-          <div className="hidden items-center gap-8 md:flex">
-            <a href="#product" className="hover:opacity-70">Product</a>
-            <a href="#tech" className="hover:opacity-70">Fabric Tech</a>
-            <a href="#story" className="hover:opacity-70">Story</a>
-            <a href="#faq" className="hover:opacity-70">FAQ</a>
+          <div className="hidden items-center gap-10 md:flex">
+            <a href="#story" className="text-sm tracking-wide hover:text-[#697560] transition-colors">Story</a>
+            <a href="#solution" className="text-sm tracking-wide hover:text-[#697560] transition-colors">Solution</a>
+            <a href="#competition" className="text-sm tracking-wide hover:text-[#697560] transition-colors">Why AirLete</a>
+            <a href="#help" className="text-sm tracking-wide hover:text-[#697560] transition-colors">Pre-Order</a>
           </div>
-          <div className="flex items-center gap-3">
-            <a href="#waitlist" className="rounded-2xl bg-slate-900 px-4 py-2 text-white hover:opacity-90">Join the waitlist</a>
-          </div>
+          <a 
+            href="#help" 
+            className="rounded-full bg-[#697560] px-6 py-2.5 text-sm text-white hover:bg-[#4A5240] transition-all duration-300 tracking-wide"
+          >
+            Join Waitlist
+          </a>
         </div>
       </nav>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
-          <div>
-            <p className="mb-3 inline-block rounded-full bg-slate-100 px-3 py-1 text-sm">Modifiable performance tops</p>
-            <h1 className="text-4xl font-semibold leading-tight md:text-6xl">Modifiable tops that adapt to your day</h1>
-            <p className="mt-4 max-w-lg text-slate-600">
-              Designed for women who move. Secure during high‑impact training, effortless to cool down, and elegant enough for coffee after class.
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#F5F1EC] to-[#E8E1D5]">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:py-32">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Logo and Tagline */}
+            <div className="fade-in-section text-center md:text-left">
+              <div className="inline-block mb-8">
+                <div className="relative w-48 h-48 mx-auto md:mx-0">
+                  <div className="absolute inset-0 rounded-full border-[3px] border-[#2C2824] flex items-center justify-center bg-white/40 backdrop-blur-sm">
+                    <div className="text-center">
+                      <h1 className="text-4xl font-light tracking-[0.2em] mb-1">AirLete</h1>
+                      <p className="text-[10px] tracking-[0.3em] uppercase px-4 leading-tight">
+                        Activewear That<br/>Moves With You
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 className="text-5xl md:text-6xl font-bold leading-tight mb-6 text-[#2C2824]">
+                Performance Meets<br/>
+                <span className="text-[#697560]">Versatility</span>
+              </h2>
+              <p className="text-lg text-[#5C4A3D] leading-relaxed mb-8 max-w-xl">
+                The first athletic apparel with real-time adjustability. Train hard, transition seamlessly, and look effortlessly polished—all in one garment.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a 
+                  href="#help" 
+                  className="rounded-full bg-[#697560] px-8 py-4 text-base text-white hover:bg-[#4A5240] transition-all duration-300 text-center font-medium tracking-wide"
+                >
+                  Sign Up for Pre-Order
+                </a>
+                <a 
+                  href="#solution" 
+                  className="rounded-full border-2 border-[#8B6F5C] px-8 py-4 text-base hover:bg-[#8B6F5C] hover:text-white transition-all duration-300 text-center font-medium tracking-wide"
+                >
+                  See How It Works
+                </a>
+              </div>
+            </div>
+
+            {/* Right Side - Hero Images (Before & After) */}
+            <div className="fade-in-section relative pb-12">
+              <div className="grid grid-cols-2 gap-4">
+                {/* Image 1 - Full Coverage */}
+                <div className="relative group">
+                  <div className="aspect-[3/4] overflow-hidden rounded-2xl shadow-xl">
+                    <img
+                      src="/airletepic1.jpg"
+                      alt="AirLete full coverage style"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-sm rounded-lg p-2">
+                    <p className="text-[#2C2824] font-bold text-xs">Full Coverage</p>
+                  </div>
+                </div>
+                
+                {/* Image 2 - Modified Style */}
+                <div className="relative group mt-8">
+                  <div className="aspect-[3/4] overflow-hidden rounded-2xl shadow-xl">
+                    <img
+                      src="/airletepic2.jpg"
+                      alt="AirLete modified style"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-sm rounded-lg p-2">
+                    <p className="text-[#2C2824] font-bold text-xs">Modified Style</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Floating badge - positioned below images */}
+              <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 bg-[#8B6F5C] text-white rounded-2xl p-5 shadow-xl z-10">
+                <p className="text-sm font-light mb-1 text-center">Starting at</p>
+                <p className="text-2xl font-bold text-center">$55-$65</p>
+              </div>
+              
+              {/* Arrow indicator showing transformation */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                <div className="bg-[#697560] text-white rounded-full p-3 shadow-lg">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Decorative element */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#8B6F5C]/10 to-transparent pointer-events-none"></div>
+      </section>
+
+      {/* How It All Started */}
+      <section id="story" className="py-20 bg-[#8B6F5C] text-white">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-5xl font-bold mb-16 text-center fade-in-section">How It All Started</h2>
+          
+          <div className="max-w-3xl mx-auto">
+            {/* Story Content */}
+            <div className="space-y-8 fade-in-section">
+              <div>
+                <p className="text-lg leading-relaxed mb-4">
+                  <strong className="text-xl">I was constantly modifying my activewear.</strong><br/>
+                  Cutting my tops, rolling up my sleeves, or tossing to death in search of that perfect fit.
+                </p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <p className="text-base leading-relaxed mb-3">
+                  <strong>But... the quick fixes never stayed put.</strong><br/>
+                  I'm a perfectionist, and what I tried would undo on me.
+                </p>
+                <p className="text-base leading-relaxed">
+                  The garment never stayed how I wanted it.
+                </p>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <p className="text-base leading-relaxed mb-3">
+                  <strong>Worst of all, I didn't feel confident.</strong><br/>
+                  The quick fixes never made my outfit look classy, and I didn't feel my best.
+                </p>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <p className="text-base leading-relaxed">
+                  <strong>That's when I realized: What my body needed changed throughout a workout.</strong> But my clothing couldn't change with me.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The AirLete Solution */}
+      <section id="solution" className="py-20 bg-[#D4C5B0]">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center mb-16 fade-in-section">
+            <h2 className="text-5xl font-bold mb-4 text-[#2C2824]">The AirLete Solution:</h2>
+            <p className="text-6xl font-bold text-[#697560]">2-in-1 Garments</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Adaptive Sleeves */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl fade-in-section">
+              <div className="w-16 h-16 bg-[#697560] rounded-2xl mb-6 flex items-center justify-center">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                  <path d="M12 2L2 12l10 10 10-10L12 2z"/>
+                  <line x1="12" y1="8" x2="12" y2="16"/>
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-[#2C2824]">Adaptive Sleeves</h3>
+              <p className="text-[#5C4A3D] leading-relaxed">
+                Easy-to-use zipper mechanism allows for quick sleeve adjustments. Go from full coverage to sleeveless in seconds—perfect for warm-ups to high-intensity training.
+              </p>
+            </div>
+
+            {/* Full-Top to Crop-Top */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl fade-in-section">
+              <div className="w-16 h-16 bg-[#8B6F5C] rounded-2xl mb-6 flex items-center justify-center">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                  <rect x="4" y="4" width="16" height="8" rx="2"/>
+                  <rect x="4" y="14" width="16" height="6" rx="2"/>
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-[#2C2824]">Full-Top to Crop-Top</h3>
+              <p className="text-[#5C4A3D] leading-relaxed">
+                Seamless transition from full-length to crop-top with accessible zipper design. Adjust your coverage and ventilation without changing your entire outfit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Competition Section */}
+      <section id="competition" className="py-20 bg-[#F5F1EC]">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="text-5xl font-bold mb-4 text-center fade-in-section">Competition</h2>
+          <p className="text-center text-[#5C4A3D] mb-12 fade-in-section">See how AirLete compares to the competition</p>
+
+          <div className="overflow-x-auto fade-in-section">
+            <table className="w-full bg-white rounded-2xl overflow-hidden shadow-xl">
+              <thead>
+                <tr className="bg-[#8B6F5C] text-white">
+                  <th className="py-4 px-6 text-left font-bold">Feature</th>
+                  <th className="py-4 px-6 text-center font-bold">Lululemon</th>
+                  <th className="py-4 px-6 text-center font-bold">Athleta</th>
+                  <th className="py-4 px-6 text-center font-bold">Gymshark</th>
+                  <th className="py-4 px-6 text-center font-bold bg-[#697560]">AirLete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-[#D4C5B0]">
+                  <td className="py-4 px-6 font-semibold">Price*</td>
+                  <td className="py-4 px-6 text-center text-sm">~$60-$80</td>
+                  <td className="py-4 px-6 text-center text-sm">~$80-$70</td>
+                  <td className="py-4 px-6 text-center text-sm">~$30-$50</td>
+                  <td className="py-4 px-6 text-center text-sm font-bold bg-[#F5F1EC]">~$55-$65</td>
+                </tr>
+                <tr className="border-b border-[#D4C5B0]">
+                  <td className="py-4 px-6 font-semibold">Real-Time Adjustability</td>
+                  <td className="py-4 px-6 text-center">
+                    <Icon.X className="w-6 h-6 text-red-500 mx-auto" />
+                  </td>
+                  <td className="py-4 px-6 text-center">
+                    <Icon.X className="w-6 h-6 text-red-500 mx-auto" />
+                  </td>
+                  <td className="py-4 px-6 text-center">
+                    <Icon.X className="w-6 h-6 text-red-500 mx-auto" />
+                  </td>
+                  <td className="py-4 px-6 text-center bg-[#F5F1EC]">
+                    <Icon.Check className="w-6 h-6 text-[#697560] mx-auto stroke-[3]" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-8 bg-[#8B6F5C] text-white rounded-2xl p-8 fade-in-section">
+            <p className="text-center text-lg leading-relaxed">
+              <strong className="text-xl">AirLete stands out by delivering premium quality WITH real-time adjustability,</strong> while the competition garments offer NO adjustability or versatility for users.
             </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <a href="#waitlist" className="rounded-2xl bg-slate-900 px-6 py-4 text-center text-base text-white hover:opacity-90">Get early access</a>
-              <a href="#product" className="flex items-center justify-center gap-2 rounded-2xl border px-6 py-3 text-base hover:bg-slate-50">
-                See the product <Icon.ArrowRight className="h-4 w-4" />
+          </div>
+        </div>
+      </section>
+
+      {/* How You Can Help */}
+      <section id="help" className="py-24 bg-[#2C2824] text-white">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="text-5xl font-bold mb-16 text-center fade-in-section">How You Can Help</h2>
+
+          <div className="grid md:grid-cols-3 gap-12">
+            {/* Sign Up for Pre-Order */}
+            <div className="text-center fade-in-section">
+              <div className="w-24 h-24 bg-[#697560] rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                <Icon.Check className="w-12 h-12" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Sign Up for Pre-Order</h3>
+              <p className="text-[#D4C5B0] leading-relaxed mb-6">
+                Interested? Provide your email below
+              </p>
+              <form onSubmit={onSubmit} className="space-y-3">
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  required
+                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-[#697560] transition-colors"
+                />
+                <button
+                  type="submit"
+                  className="w-full rounded-lg bg-[#697560] px-6 py-3 font-semibold hover:bg-[#4A5240] transition-all duration-300"
+                >
+                  Join Pre-Order List
+                </button>
+              </form>
+            </div>
+
+            {/* Stay Connected */}
+            <div className="text-center fade-in-section">
+              <div className="w-24 h-24 bg-[#8B6F5C] rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                <Icon.Instagram className="w-12 h-12" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Stay Connected</h3>
+              <p className="text-[#D4C5B0] leading-relaxed mb-6">
+                Follow us on our Instagram
+              </p>
+              <a
+                href="https://instagram.com/airletewear"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block rounded-lg border-2 border-white/30 px-8 py-3 font-semibold hover:bg-white/10 transition-all duration-300"
+              >
+                @airletewear
               </a>
             </div>
-            <div className="mt-6 flex items-center gap-4 text-sm text-slate-500">
-              <div className="flex items-center gap-2"><Icon.Check className="h-4 w-4" />30‑day returns</div>
-              <div className="flex items-center gap-2"><Icon.Check className="h-4 w-4" />Fast shipping</div>
-              <div className="flex items-center gap-2"><Icon.Check className="h-4 w-4" />Made in USA</div>
+
+            {/* Contact Us */}
+            <div className="text-center fade-in-section">
+              <div className="w-24 h-24 bg-[#5C4A3D] rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                <Icon.Mail className="w-12 h-12" />
+              </div>
+              <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
+              
+              <div className="space-y-4">
+                <div>
+                  <p className="text-[#D4C5B0] text-sm mb-1">IG Handle</p>
+                  <p className="text-white font-semibold">@airletewear</p>
+                </div>
+                
+                <div>
+                  <p className="text-[#D4C5B0] text-sm mb-1">Our email</p>
+                  <a href="mailto:info@airletewear.com" className="text-white font-semibold hover:text-[#D4C5B0] transition-colors">
+                    info@airletewear.com
+                  </a>
+                </div>
+                
+                <div>
+                  <p className="text-[#D4C5B0] text-sm mb-1">Founder Contact</p>
+                  <a href="mailto:BhatiaI26@darden.virginia.edu" className="text-white font-semibold hover:text-[#D4C5B0] transition-colors break-all">
+                    BhatiaI26@darden.virginia.edu
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="relative">
-            <div className="aspect-[4/5] w-full overflow-hidden rounded-3xl bg-slate-100">
-              <img
-                src="/airlete-olive.png"
-                alt="Airlete modifiable top"
-                className="h-full w-full object-cover"
-                onError={(e) => {
-                  const el = e.currentTarget as HTMLImageElement;
-                  // inline neutral placeholder if the file is missing in preview
-                  el.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Crect width='100%25' height='100%25' fill='%23f1f5f9'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2394a3b8' font-family='sans-serif' font-size='20'%3EAdd /public/hero-olive-zip.png%3C/text%3E%3C/svg%3E";
-                }}
+
+          {/* QR Code Section */}
+          <div className="mt-16 text-center fade-in-section">
+            <div className="inline-block bg-white p-8 rounded-2xl shadow-2xl">
+              <img 
+                src="/preorder.png" 
+                alt="Scan QR code for pre-order" 
+                className="w-48 h-48 mx-auto"
               />
+              <p className="text-[#2C2824] font-bold text-sm mt-4">Scan to Pre-Order</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Story */}
-      <section id="story" className="mx-auto max-w-7xl px-4 py-16">
-        <div className="grid items-start gap-12 md:grid-cols-2">
-          <div>
-            <h2 className="text-3xl font-semibold md:text-4xl">Our Story</h2>
-            <p className="mt-3 text-slate-600">Why we’re building Airlete—and what we believe performance wear should do for the people who wear it.</p>
-            <div className="mt-8 space-y-6">
-              <div className="rounded-3xl border p-6">
-                <h3 className="text-xl font-semibold leading-snug">Empowering women<br/>with clothes that<br/>adapt to their bodies,<br/>on their terms</h3>
-                <p className="mt-3 text-sm text-slate-600">Your day has modes—train, transition, and chill. Your clothes should keep up without compromises, pinches, or workarounds. Our modifiable system adjusts instantly so you control support, ventilation, and coverage—no outfit change required.</p>
-              </div>
-              <div className="rounded-3xl border p-6">
-                <h3 className="text-xl font-semibold leading-snug">Reducing<br/>overconsumption<br/>and waste through<br/>multifunctional garments</h3>
-                <p className="mt-3 text-sm text-slate-600">One top that replaces three. Fewer purchases, fewer returns, fewer unused pieces. Thoughtful design, durable fabrics, and timeless lines so you can wear it longer and style it broader.</p>
-              </div>
+      {/* Footer */}
+      <footer className="bg-[#1A1714] text-[#D4C5B0] py-12">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-2">
+              <span className="text-xl font-light tracking-[0.15em]">AirLete</span>
+              <span className="text-sm">© 2024</span>
+            </div>
+            <div className="flex items-center gap-8">
+              <a href="#story" className="hover:text-white transition-colors">Our Story</a>
+              <a href="#solution" className="hover:text-white transition-colors">Solution</a>
+              <a href="#help" className="hover:text-white transition-colors">Contact</a>
+            </div>
+            <div className="flex items-center gap-4">
+              <a href="https://instagram.com/airletewear" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                <Icon.Instagram className="w-6 h-6" />
+              </a>
+              <a href="mailto:info@airletewear.com" className="hover:text-white transition-colors">
+                <Icon.Mail className="w-6 h-6" />
+              </a>
             </div>
           </div>
-          <div className="aspect-[4/5] overflow-hidden rounded-3xl bg-slate-100">
-            <img src="/story-hero.jpg" alt="Airlete story" className="h-full w-full object-cover" />
-          </div>
         </div>
-      </section>
-
-      {/* Waitlist */}
-      <section id="waitlist" className="border-y bg-slate-50">
-        <div className="mx-auto max-w-3xl px-4 py-16 text-center md:py-20">
-          <h2 className="text-3xl font-semibold md:text-4xl">Be first in line</h2>
-          <p className="mx-auto mt-3 max-w-xl text-slate-600">Join the waitlist for early access, sizing drops, and founder pricing on our first run.</p>
-          <form className="mx-auto mt-6 flex max-w-xl flex-col gap-3 sm:flex-row" onSubmit={onSubmit}>
-            <div className="relative flex-1">
-              <Icon.Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 opacity-60" />
-              <input name="email" type="email" placeholder="you@name.com" required className="h-11 w-full rounded-md border px-3 pl-9 outline-none ring-0 focus:border-slate-400" />
-            </div>
-            <button type="submit" className="rounded-2xl bg-slate-900 px-6 py-3 text-white hover:opacity-90">Notify me</button>
-          </form>
-          <p className="mt-2 text-xs text-slate-500">No spam. Unsubscribe anytime.</p>
-        </div>
-      </section>
+      </footer>
     </main>
   );
 }
