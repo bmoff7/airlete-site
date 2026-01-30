@@ -84,16 +84,16 @@ export default function AirleteLanding() {
             <span className="text-2xl font-light tracking-wide text-[#6B4D61]">AirLete</span>
           </div>
           <div className="hidden items-center gap-10 md:flex">
-            <a href="#story" className="text-sm tracking-wide hover:text-[#8B6B7F] transition-colors">Story</a>
+            <a href="#story" className="text-sm tracking-wide hover:text-[#8B6B7F] transition-colors">Our Story</a>
             <a href="#solution" className="text-sm tracking-wide hover:text-[#8B6B7F] transition-colors">Solution</a>
-            <a href="#competition" className="text-sm tracking-wide hover:text-[#8B6B7F] transition-colors">Why AirLete</a>
-            <a href="#help" className="text-sm tracking-wide hover:text-[#8B6B7F] transition-colors">Pre-Order</a>
+            <a href="#competition" className="text-sm tracking-wide hover:text-[#8B6B7F] transition-colors">Competition</a>
+            <a href="#help" className="text-sm tracking-wide hover:text-[#8B6B7F] transition-colors">Join Early Access</a>
           </div>
           <a 
             href="#help" 
             className="rounded-full bg-gradient-to-r from-[#8B6B7F] to-[#6B4D61] px-6 py-2.5 text-sm text-white hover:from-[#6B4D61] hover:to-[#4A3447] transition-all duration-300 tracking-wide"
           >
-            Join Waitlist
+            Join Early Access
           </a>
         </div>
       </nav>
@@ -116,7 +116,7 @@ export default function AirleteLanding() {
                   href="#help" 
                   className="rounded-full bg-gradient-to-r from-[#8B6B7F] to-[#6B4D61] px-8 py-4 text-base text-white hover:from-[#6B4D61] hover:to-[#4A3447] transition-all duration-300 text-center font-medium tracking-wide shadow-lg"
                 >
-                  Sign Up for Pre-Order
+                  Join Early Access
                 </a>
                 <a 
                   href="#solution" 
@@ -128,7 +128,7 @@ export default function AirleteLanding() {
             </div>
 
             {/* Right Side - Hero Images (Before & After) */}
-            <div className="fade-in-section relative pb-12">
+            <div className="fade-in-section relative">
               <div className="grid grid-cols-2 gap-4">
                 {/* Image 1 - Full Coverage */}
                 <div className="relative group">
@@ -157,12 +157,6 @@ export default function AirleteLanding() {
                     <p className="text-[#2A2529] font-semibold text-xs">Modified Style</p>
                   </div>
                 </div>
-              </div>
-              
-              {/* Floating badge - positioned below images */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#8B6B7F] to-[#6B4D61] text-white rounded-2xl p-5 shadow-xl z-10">
-                <p className="text-sm font-light mb-1 text-center">Starting at</p>
-                <p className="text-2xl font-bold text-center">$55-$65</p>
               </div>
               
               {/* Arrow indicator showing transformation */}
@@ -332,12 +326,12 @@ export default function AirleteLanding() {
           <h2 className="text-5xl font-light mb-16 text-center fade-in-section">How You Can Help</h2>
 
           <div className="grid md:grid-cols-3 gap-12">
-            {/* Sign Up for Pre-Order */}
+            {/* Join Early Access */}
             <div className="text-center fade-in-section">
               <div className="w-24 h-24 bg-gradient-to-br from-[#8B6B7F] to-[#6B4D61] rounded-2xl mx-auto mb-6 flex items-center justify-center">
                 <Icon.Check className="w-12 h-12" />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Sign Up for Pre-Order</h3>
+              <h3 className="text-2xl font-semibold mb-4">Join Early Access</h3>
               <p className="text-[#C4A4B7] leading-relaxed mb-6">
                 Interested? Provide your email below
               </p>
@@ -353,7 +347,7 @@ export default function AirleteLanding() {
                   type="submit"
                   className="w-full rounded-lg bg-gradient-to-r from-[#8B6B7F] to-[#6B4D61] px-6 py-3 font-semibold hover:from-[#6B4D61] hover:to-[#4A3447] transition-all duration-300"
                 >
-                  Join Pre-Order List
+                  Join Early Access
                 </button>
               </form>
             </div>
@@ -415,7 +409,7 @@ export default function AirleteLanding() {
                 alt="Scan QR code for pre-order" 
                 className="w-48 h-48 mx-auto"
               />
-              <p className="text-[#2A2529] font-bold text-sm mt-4">Scan to Pre-Order</p>
+              <p className="text-[#2A2529] font-bold text-sm mt-4">Scan to Join Early Access</p>
             </div>
           </div>
         </div>
