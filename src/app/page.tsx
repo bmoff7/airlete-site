@@ -192,7 +192,7 @@ export default function AirleteLanding() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-16 max-w-5xl mx-auto">
-            {/* Real-Time Adaptability */}
+            {/* Adjust in Seconds */}
             <div className="text-center fade-in-section">
               <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
                 <svg viewBox="0 0 64 64" className="w-full h-full text-[#8B6B7F]" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -205,29 +205,29 @@ export default function AirleteLanding() {
                   <circle cx="42" cy="44" r="4" fill="currentColor"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-[#6B4D61]">Real-Time Adaptability</h3>
+              <h3 className="text-lg font-semibold mb-3 text-[#6B4D61]">Adjust in Seconds</h3>
               <p className="text-[#8B6B7F] leading-relaxed text-sm">
-                Garments adjust your body's movement
+                Put on or remove sleeves mid-workout through a simple zipper mechanism
               </p>
             </div>
 
-            {/* Performance Fabric */}
+            {/* Secure Fit */}
             <div className="text-center fade-in-section">
               <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
                 <svg viewBox="0 0 64 64" className="w-full h-full text-[#8B6B7F]" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  {/* Wind/air flow lines showing breathability */}
+                  {/* Wind/air flow lines */}
                   <path d="M 12 20 Q 20 20 24 16 Q 28 12 32 12 Q 36 12 40 16"/>
                   <path d="M 12 32 Q 24 32 28 28 Q 32 24 38 24 Q 44 24 48 28"/>
                   <path d="M 12 44 Q 20 44 26 40 Q 30 36 36 36 Q 42 36 46 40"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-[#6B4D61]">Performance Fabric</h3>
+              <h3 className="text-lg font-semibold mb-3 text-[#6B4D61]">Secure Fit</h3>
               <p className="text-[#8B6B7F] leading-relaxed text-sm">
-                Breathable, sweat-wicking, and flexible
+                Designed to stay in place through dynamic movement.
               </p>
             </div>
 
-            {/* Sleek Design */}
+            {/* One Garment, Multiple Phases */}
             <div className="text-center fade-in-section">
               <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
                 <svg viewBox="0 0 64 64" className="w-full h-full text-[#8B6B7F]" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -239,9 +239,9 @@ export default function AirleteLanding() {
                   <path d="M 26 36 Q 22 38 20 40"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-[#6B4D61]">Sleek Design</h3>
+              <h3 className="text-lg font-semibold mb-3 text-[#6B4D61]">One Garment, Multiple Phases</h3>
               <p className="text-[#8B6B7F] leading-relaxed text-sm">
-                Combines function with a clean aesthetic
+                Warm up, train, and cool without changing layers.
               </p>
             </div>
           </div>
