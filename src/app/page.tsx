@@ -191,50 +191,56 @@ export default function AirleteLanding() {
       </section>
 
       {/* The AirLete Solution */}
-      <section id="solution" className="py-20 bg-[#F5EEE8]">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center mb-16 fade-in-section">
-            <h2 className="text-5xl font-light mb-4 text-[#2A2529]">The AirLete Solution:</h2>
-            <p className="text-6xl font-normal text-[#8B6B7F]">2-in-1 Garments</p>
+      <section id="solution" className="py-20 bg-gradient-to-br from-[#F5EEE8] to-[#F0E4DD]">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="text-center mb-12 fade-in-section">
+            <h2 className="text-5xl font-light mb-4 text-[#8B6B7F]">Adaptive Sleeve System</h2>
+            <p className="text-lg text-[#6B4D61] max-w-3xl mx-auto">
+              Convertible sleeves that can be worn or removed in seconds, without changing outfits or interrupting training.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12 items-start max-w-5xl mx-auto">
-            {/* Real-Time Adaptability */}
-            <div className="text-center fade-in-section">
-              <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                <Icon.Triangle className="w-full h-full text-[#8B6B7F]" />
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-16">
+            {/* Adjust in Seconds */}
+            <div className="text-center fade-in-section bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-[#F5EEE8] rounded-xl">
+                <svg viewBox="0 0 24 24" className="w-10 h-10 text-[#8B6B7F]" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-[#2A2529]">Real-Time Adaptability</h3>
-              <p className="text-[#6B4D61] leading-relaxed text-sm">
-                Garments adjust your body's movement
+              <h3 className="text-xl font-semibold mb-3 text-[#6B4D61]">Adjust in Seconds</h3>
+              <p className="text-[#8B6B7F] leading-relaxed text-sm">
+                Put on or remove sleeves mid-workout through a simple zipper mechanism.
               </p>
             </div>
 
-            {/* Performance Fabric */}
-            <div className="text-center fade-in-section">
-              <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                <svg viewBox="0 0 100 100" className="w-full h-full text-[#8B6B7F]" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="50" cy="35" r="15"/>
-                  <path d="M 35 50 Q 50 60 65 50"/>
+            {/* Secure Fit */}
+            <div className="text-center fade-in-section bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-[#F5EEE8] rounded-xl">
+                <svg viewBox="0 0 24 24" className="w-10 h-10 text-[#8B6B7F]" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-[#2A2529]">Performance Fabric</h3>
-              <p className="text-[#6B4D61] leading-relaxed text-sm">
-                Breathable, sweat-wicking, and flexible
+              <h3 className="text-xl font-semibold mb-3 text-[#6B4D61]">Secure Fit</h3>
+              <p className="text-[#8B6B7F] leading-relaxed text-sm">
+                Designed to stay in place through dynamic movement.
               </p>
             </div>
 
-            {/* Sleek Design */}
-            <div className="text-center fade-in-section">
-              <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                <svg viewBox="0 0 100 100" className="w-full h-full text-[#8B6B7F]" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M 30 30 L 70 30 L 60 70 L 40 70 Z"/>
-                  <line x1="50" y1="30" x2="50" y2="70"/>
+            {/* One Garment, Multiple Phases */}
+            <div className="text-center fade-in-section bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-[#F5EEE8] rounded-xl">
+                <svg viewBox="0 0 24 24" className="w-10 h-10 text-[#8B6B7F]" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5"/>
+                  <path d="M2 12l10 5 10-5"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-[#2A2529]">Sleek Design</h3>
-              <p className="text-[#6B4D61] leading-relaxed text-sm">
-                Combines function with a clean aesthetic
+              <h3 className="text-xl font-semibold mb-3 text-[#6B4D61]">One Garment,<br/>Multiple Phases</h3>
+              <p className="text-[#8B6B7F] leading-relaxed text-sm">
+                Warm up, train, and cool without changing layers.
               </p>
             </div>
           </div>
