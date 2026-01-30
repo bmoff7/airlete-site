@@ -328,7 +328,7 @@ export default function AirleteLanding() {
                 className="h-8 w-8 object-contain opacity-80"
               />
               <span className="text-xl font-light tracking-wide">AirLete</span>
-              <span className="text-sm">© 2024</span>
+              <span className="text-sm">© 2026</span>
             </div>
             <div className="flex items-center gap-8">
               <a href="#story" className="hover:text-white transition-colors">Our Story</a>
