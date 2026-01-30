@@ -74,10 +74,12 @@ export default function AirleteLanding() {
           <div className="hidden items-center gap-10 md:flex">
             <a href="#story" className="text-sm tracking-wide hover:text-[#8B6B7F] transition-colors">Our Story</a>
             <a href="#solution" className="text-sm tracking-wide hover:text-[#8B6B7F] transition-colors">Solution</a>
-            <a href="#help" className="text-sm tracking-wide hover:text-[#8B6B7F] transition-colors">Join Early Access</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr5wWmQFO2nNLUOXoGbFFEGLo64Xu2eP_iFE5Wx2zLlcL-uA/viewform" target="_blank" rel="noopener noreferrer" className="text-sm tracking-wide hover:text-[#8B6B7F] transition-colors">Join Early Access</a>
           </div>
           <a 
-            href="#help" 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfr5wWmQFO2nNLUOXoGbFFEGLo64Xu2eP_iFE5Wx2zLlcL-uA/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-gradient-to-r from-[#8B6B7F] to-[#6B4D61] px-6 py-2.5 text-sm text-white hover:from-[#6B4D61] hover:to-[#4A3447] transition-all duration-300 tracking-wide"
           >
             Join Early Access
@@ -100,7 +102,9 @@ export default function AirleteLanding() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href="#help" 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfr5wWmQFO2nNLUOXoGbFFEGLo64Xu2eP_iFE5Wx2zLlcL-uA/viewform"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-full bg-gradient-to-r from-[#8B6B7F] to-[#6B4D61] px-8 py-4 text-base text-white hover:from-[#6B4D61] hover:to-[#4A3447] transition-all duration-300 text-center font-medium tracking-wide shadow-lg"
                 >
                   Join Early Access
