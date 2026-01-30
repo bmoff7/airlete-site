@@ -86,7 +86,6 @@ export default function AirleteLanding() {
           <div className="hidden items-center gap-10 md:flex">
             <a href="#story" className="text-sm tracking-wide hover:text-[#8B6B7F] transition-colors">Our Story</a>
             <a href="#solution" className="text-sm tracking-wide hover:text-[#8B6B7F] transition-colors">Solution</a>
-            <a href="#competition" className="text-sm tracking-wide hover:text-[#8B6B7F] transition-colors">Competition</a>
             <a href="#help" className="text-sm tracking-wide hover:text-[#8B6B7F] transition-colors">Join Early Access</a>
           </div>
           <a 
@@ -191,7 +190,7 @@ export default function AirleteLanding() {
       </section>
 
       {/* The AirLete Solution */}
-      <section id="solution" className="py-20 bg-gradient-to-br from-[#F5EEE8] to-[#F0E4DD]">
+      <section id="solution" className="py-20 bg-[#F5EEE8]">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-12 fade-in-section">
             <h2 className="text-5xl font-light mb-4 text-[#8B6B7F]">Adaptive Sleeve System</h2>
@@ -200,101 +199,59 @@ export default function AirleteLanding() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-16">
-            {/* Adjust in Seconds */}
-            <div className="text-center fade-in-section bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-[#F5EEE8] rounded-xl">
-                <svg viewBox="0 0 24 24" className="w-10 h-10 text-[#8B6B7F]" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
+          <div className="grid md:grid-cols-3 gap-16 max-w-5xl mx-auto">
+            {/* Real-Time Adaptability */}
+            <div className="text-center fade-in-section">
+              <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                <svg viewBox="0 0 64 64" className="w-full h-full text-[#8B6B7F]" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  {/* Adjustable slider/levels */}
+                  <line x1="12" y1="20" x2="52" y2="20"/>
+                  <circle cx="38" cy="20" r="4" fill="currentColor"/>
+                  <line x1="12" y1="32" x2="52" y2="32"/>
+                  <circle cx="26" cy="32" r="4" fill="currentColor"/>
+                  <line x1="12" y1="44" x2="52" y2="44"/>
+                  <circle cx="42" cy="44" r="4" fill="currentColor"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-[#6B4D61]">Adjust in Seconds</h3>
+              <h3 className="text-lg font-semibold mb-3 text-[#6B4D61]">Real-Time Adaptability</h3>
               <p className="text-[#8B6B7F] leading-relaxed text-sm">
-                Put on or remove sleeves mid-workout through a simple zipper mechanism.
+                Garments adjust your body's movement
               </p>
             </div>
 
-            {/* Secure Fit */}
-            <div className="text-center fade-in-section bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-[#F5EEE8] rounded-xl">
-                <svg viewBox="0 0 24 24" className="w-10 h-10 text-[#8B6B7F]" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            {/* Performance Fabric */}
+            <div className="text-center fade-in-section">
+              <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                <svg viewBox="0 0 64 64" className="w-full h-full text-[#8B6B7F]" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  {/* Wind/air flow lines showing breathability */}
+                  <path d="M 12 20 Q 20 20 24 16 Q 28 12 32 12 Q 36 12 40 16"/>
+                  <path d="M 12 32 Q 24 32 28 28 Q 32 24 38 24 Q 44 24 48 28"/>
+                  <path d="M 12 44 Q 20 44 26 40 Q 30 36 36 36 Q 42 36 46 40"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-[#6B4D61]">Secure Fit</h3>
+              <h3 className="text-lg font-semibold mb-3 text-[#6B4D61]">Performance Fabric</h3>
               <p className="text-[#8B6B7F] leading-relaxed text-sm">
-                Designed to stay in place through dynamic movement.
+                Breathable, sweat-wicking, and flexible
               </p>
             </div>
 
-            {/* One Garment, Multiple Phases */}
-            <div className="text-center fade-in-section bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-[#F5EEE8] rounded-xl">
-                <svg viewBox="0 0 24 24" className="w-10 h-10 text-[#8B6B7F]" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                  <path d="M2 17l10 5 10-5"/>
-                  <path d="M2 12l10 5 10-5"/>
+            {/* Sleek Design */}
+            <div className="text-center fade-in-section">
+              <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                <svg viewBox="0 0 64 64" className="w-full h-full text-[#8B6B7F]" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  {/* Elegant feather */}
+                  <path d="M 32 12 Q 28 28 26 32 Q 24 38 24 48"/>
+                  <path d="M 26 18 Q 18 20 16 22"/>
+                  <path d="M 26 24 Q 18 26 16 28"/>
+                  <path d="M 26 30 Q 20 32 18 34"/>
+                  <path d="M 26 36 Q 22 38 20 40"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-[#6B4D61]">One Garment,<br/>Multiple Phases</h3>
+              <h3 className="text-lg font-semibold mb-3 text-[#6B4D61]">Sleek Design</h3>
               <p className="text-[#8B6B7F] leading-relaxed text-sm">
-                Warm up, train, and cool without changing layers.
+                Combines function with a clean aesthetic
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Competition Section */}
-      <section id="competition" className="py-20 bg-[#FAF8F5]">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-5xl font-light mb-4 text-center fade-in-section">Competition</h2>
-          <p className="text-center text-[#6B4D61] mb-12 fade-in-section">See how AirLete compares to the competition</p>
-
-          <div className="overflow-x-auto fade-in-section">
-            <table className="w-full bg-white rounded-2xl overflow-hidden shadow-xl">
-              <thead>
-                <tr className="bg-gradient-to-r from-[#8B6B7F] to-[#6B4D61] text-white">
-                  <th className="py-4 px-6 text-left font-semibold">Feature</th>
-                  <th className="py-4 px-6 text-center font-semibold">Lululemon</th>
-                  <th className="py-4 px-6 text-center font-semibold">Athleta</th>
-                  <th className="py-4 px-6 text-center font-semibold">Gymshark</th>
-                  <th className="py-4 px-6 text-center font-semibold bg-[#6B4D61]">AirLete</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-[#C4A4B7]/20">
-                  <td className="py-4 px-6 font-semibold">Price*</td>
-                  <td className="py-4 px-6 text-center text-sm">~$60-$80</td>
-                  <td className="py-4 px-6 text-center text-sm">~$80-$70</td>
-                  <td className="py-4 px-6 text-center text-sm">~$30-$50</td>
-                  <td className="py-4 px-6 text-center text-sm font-bold bg-[#FAF8F5]">~$55-$65</td>
-                </tr>
-                <tr className="border-b border-[#C4A4B7]/20">
-                  <td className="py-4 px-6 font-semibold">Real-Time Adjustability</td>
-                  <td className="py-4 px-6 text-center">
-                    <Icon.X className="w-6 h-6 text-red-500 mx-auto" />
-                  </td>
-                  <td className="py-4 px-6 text-center">
-                    <Icon.X className="w-6 h-6 text-red-500 mx-auto" />
-                  </td>
-                  <td className="py-4 px-6 text-center">
-                    <Icon.X className="w-6 h-6 text-red-500 mx-auto" />
-                  </td>
-                  <td className="py-4 px-6 text-center bg-[#FAF8F5]">
-                    <Icon.Check className="w-6 h-6 text-[#8B6B7F] mx-auto stroke-[3]" />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div className="mt-8 bg-gradient-to-r from-[#8B6B7F] to-[#6B4D61] text-white rounded-2xl p-8 fade-in-section">
-            <p className="text-center text-lg leading-relaxed">
-              <strong className="text-xl">AirLete stands out by delivering premium quality WITH real-time adjustability,</strong> while the competition garments offer NO adjustability or versatility for users.
-            </p>
           </div>
         </div>
       </section>
@@ -302,8 +259,6 @@ export default function AirleteLanding() {
       {/* How You Can Help */}
       <section id="help" className="py-24 bg-[#2A2529] text-white">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-5xl font-light mb-16 text-center fade-in-section">How You Can Help</h2>
-
           <div className="grid md:grid-cols-3 gap-12">
             {/* Join Early Access */}
             <div className="text-center fade-in-section">
@@ -312,7 +267,7 @@ export default function AirleteLanding() {
               </div>
               <h3 className="text-2xl font-semibold mb-4">Join Early Access</h3>
               <p className="text-[#C4A4B7] leading-relaxed mb-6">
-                Interested? Provide your email below
+                Be the first to receive product updates and launch announcements
               </p>
               <form onSubmit={onSubmit} className="space-y-3">
                 <input
@@ -322,12 +277,6 @@ export default function AirleteLanding() {
                   required
                   className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-[#8B6B7F] transition-colors"
                 />
-                <button
-                  type="submit"
-                  className="w-full rounded-lg bg-gradient-to-r from-[#8B6B7F] to-[#6B4D61] px-6 py-3 font-semibold hover:from-[#6B4D61] hover:to-[#4A3447] transition-all duration-300"
-                >
-                  Join Early Access
-                </button>
               </form>
             </div>
 
@@ -336,7 +285,7 @@ export default function AirleteLanding() {
               <div className="w-24 h-24 bg-gradient-to-br from-[#9D7B8E] to-[#8B6B7F] rounded-2xl mx-auto mb-6 flex items-center justify-center">
                 <Icon.Instagram className="w-12 h-12" />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Stay Connected</h3>
+              <h3 className="text-2xl font-semibold mb-4">Keep Instagram</h3>
               <p className="text-[#C4A4B7] leading-relaxed mb-6">
                 Follow us on our Instagram
               </p>
@@ -359,12 +308,7 @@ export default function AirleteLanding() {
               
               <div className="space-y-4">
                 <div>
-                  <p className="text-[#C4A4B7] text-sm mb-1">IG Handle</p>
-                  <p className="text-white font-semibold">@airletewear</p>
-                </div>
-                
-                <div>
-                  <p className="text-[#C4A4B7] text-sm mb-1">Our email</p>
+                  <p className="text-[#C4A4B7] text-sm mb-1">Email</p>
                   <a href="mailto:info@airletewear.com" className="text-white font-semibold hover:text-[#C4A4B7] transition-colors">
                     info@airletewear.com
                   </a>
@@ -377,18 +321,6 @@ export default function AirleteLanding() {
                   </a>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* QR Code Section */}
-          <div className="mt-16 text-center fade-in-section">
-            <div className="inline-block bg-white p-8 rounded-2xl shadow-2xl">
-              <img 
-                src="/preorder.png" 
-                alt="Scan QR code for pre-order" 
-                className="w-48 h-48 mx-auto"
-              />
-              <p className="text-[#2A2529] font-bold text-sm mt-4">Scan to Join Early Access</p>
             </div>
           </div>
         </div>
