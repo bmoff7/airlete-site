@@ -58,18 +58,6 @@ export default function AirleteLanding() {
     return () => observer.disconnect();
   }, []);
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const fd = new FormData(e.currentTarget);
-    const email = String(fd.get("email") || "").trim();
-    if (!email) {
-      alert("Please enter an email.");
-      return;
-    }
-    alert("Thanks! You're on the pre-order list. Check your inbox for confirmation.");
-    e.currentTarget.reset();
-  }
-
   return (
     <main className="min-h-screen bg-[#FAF8F5] text-[#2A2529]">
       {/* Navigation */}
@@ -269,15 +257,14 @@ export default function AirleteLanding() {
               <p className="text-[#C4A4B7] leading-relaxed mb-6">
                 Be the first to receive product updates and launch announcements
               </p>
-              <form onSubmit={onSubmit} className="space-y-3">
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="your@email.com"
-                  required
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-[#8B6B7F] transition-colors"
-                />
-              </form>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfr5wWmQFO2nNLUOXoGbFFEGLo64Xu2eP_iFE5Wx2zLlcL-uA/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block rounded-lg bg-gradient-to-r from-[#8B6B7F] to-[#6B4D61] px-8 py-3 font-semibold hover:from-[#6B4D61] hover:to-[#4A3447] transition-all duration-300"
+              >
+                Sign Up
+              </a>
             </div>
 
             {/* Stay Connected */}
