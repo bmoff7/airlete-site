@@ -180,38 +180,11 @@ export default function AirleteLanding() {
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-5xl font-light mb-16 text-center fade-in-section">How It All Started</h2>
           
-          <div className="max-w-3xl mx-auto">
-            {/* Story Content */}
-            <div className="space-y-8 fade-in-section">
-              <div>
-                <p className="text-lg leading-relaxed mb-4">
-                  <strong className="text-xl">I was constantly modifying my activewear.</strong><br/>
-                  Cutting my tops, rolling up my sleeves, or tossing to death in search of that perfect fit.
-                </p>
-              </div>
-              
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                <p className="text-base leading-relaxed mb-3">
-                  <strong>But... the quick fixes never stayed put.</strong><br/>
-                  I'm a perfectionist, and what I tried would undo on me.
-                </p>
-                <p className="text-base leading-relaxed">
-                  The garment never stayed how I wanted it.
-                </p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                <p className="text-base leading-relaxed mb-3">
-                  <strong>Worst of all, I didn't feel confident.</strong><br/>
-                  The quick fixes never made my outfit look classy, and I didn't feel my best.
-                </p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                <p className="text-base leading-relaxed">
-                  <strong>That's when I realized: What my body needed changed throughout a workout.</strong> But my clothing couldn't change with me.
-                </p>
-              </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="fade-in-section">
+              <p className="text-lg leading-relaxed text-center italic">
+                "AirLete began with a simple realization: workouts are dynamic, but activewear is designed for static use. During training, athletes constantly adjust their clothing to find comfort, from rolling up sleeves to other temporary fixes that come undone with even the slightest movement. These interruptions break focus mid-session and highlight a core design gap in other performance apparel. AirLete was created to provide users with garments that adapt to the body in real time throughout a workout."
+              </p>
             </div>
           </div>
         </div>
