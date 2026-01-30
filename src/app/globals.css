@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  /* AirLete Athletic Brand Colors */
-  --airlete-cream: #F5F1EC;
-  --airlete-tan: #D4C5B0;
-  --airlete-brown: #8B6F5C;
-  --airlete-dark-brown: #5C4A3D;
-  --airlete-olive: #697560;
-  --airlete-dark-olive: #4A5240;
-  --airlete-charcoal: #2C2824;
+  /* AirLete Plum Gradient Brand Colors */
+  --airlete-light-cream: #FAF8F5;
+  --airlete-cream: #F5EEE8;
+  --airlete-light-plum: #C4A4B7;
+  --airlete-plum: #8B6B7F;
+  --airlete-dark-plum: #6B4D61;
+  --airlete-deep-plum: #4A3447;
+  --airlete-charcoal: #2A2529;
+  --airlete-mauve: #9D7B8E;
   
-  --background: var(--airlete-cream);
+  --background: var(--airlete-light-cream);
   --foreground: var(--airlete-charcoal);
   --font-geist-sans: 'Geist', system-ui, sans-serif;
   --font-geist-mono: 'Geist Mono', monospace;
