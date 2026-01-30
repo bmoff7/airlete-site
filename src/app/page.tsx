@@ -272,9 +272,9 @@ export default function AirleteLanding() {
               <div className="w-24 h-24 bg-gradient-to-br from-[#9D7B8E] to-[#8B6B7F] rounded-2xl mx-auto mb-6 flex items-center justify-center">
                 <Icon.Instagram className="w-12 h-12" />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Keep Instagram</h3>
+              <h3 className="text-2xl font-semibold mb-4">Follow us on Instagram</h3>
               <p className="text-[#C4A4B7] leading-relaxed mb-6">
-                Follow us on our Instagram
+                See our latest products and updates
               </p>
               <a
                 href="https://instagram.com/airletewear"
