@@ -134,13 +134,13 @@ export default function AirleteLanding() {
                 <div className="relative group">
                   <div className="aspect-[3/4] overflow-hidden rounded-2xl shadow-xl ring-2 ring-[#C4A4B7]/20">
                     <img
-                      src="/airletepic1.jpg"
-                      alt="AirLete full coverage style"
+                      src="/sleeveplum.jpg"
+                      alt="AirLete full coverage style with sleeves"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-sm rounded-lg p-2">
-                    <p className="text-[#2A2529] font-semibold text-xs">Full Coverage</p>
+                    <p className="text-[#2A2529] font-semibold text-xs">With Sleeves</p>
                   </div>
                 </div>
                 
@@ -148,13 +148,13 @@ export default function AirleteLanding() {
                 <div className="relative group mt-8">
                   <div className="aspect-[3/4] overflow-hidden rounded-2xl shadow-xl ring-2 ring-[#C4A4B7]/20">
                     <img
-                      src="/airletepic2.jpg"
-                      alt="AirLete modified style"
+                      src="/nosleeveplum.jpg"
+                      alt="AirLete sleeveless style"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-sm rounded-lg p-2">
-                    <p className="text-[#2A2529] font-semibold text-xs">Modified Style</p>
+                    <p className="text-[#2A2529] font-semibold text-xs">Sleeveless</p>
                   </div>
                 </div>
               </div>
